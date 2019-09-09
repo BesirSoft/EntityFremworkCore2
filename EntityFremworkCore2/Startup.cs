@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using EntityFremworkCore2.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -28,6 +29,7 @@ namespace EntityFremworkCore2
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddTransient<IProductRepository, FakProductRepository>();
             services.AddMvc();
 
         }
