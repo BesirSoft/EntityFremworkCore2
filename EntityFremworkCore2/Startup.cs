@@ -6,6 +6,8 @@ using EntityFremworkCore2.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -29,8 +31,18 @@ namespace EntityFremworkCore2
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddTransient<IProductRepository, FakProductRepository>();
-            services.AddMvc();
+
+
+
+            services.AddDbContext<AplicationDbContext>(options =>
+                   //options.UseSqlServer(Configuration["ConnectionStrings:DefaultConnection"]));
+            options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
+
+          //  services.AddTransient<IProductRepository, FakProductRepository>();
+
+            services.AddTransient<IProductRepository, EfProductRepostory>();
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
         }
 
@@ -53,7 +65,7 @@ namespace EntityFremworkCore2
             });
 
 
-
+               SeedData.Seed(app);
 
         }
     }
