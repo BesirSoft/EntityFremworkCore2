@@ -29,7 +29,7 @@ namespace EntityFremworkCore2.Controllers
 
 
 
-            var urun=repository.Products.Where(i => i.Price == 10000000);
+            var urun=repository.Products;
 
             return View(urun);
 
@@ -63,5 +63,62 @@ namespace EntityFremworkCore2.Controllers
             return View();
 
         }
+
+
+        public IActionResult Details(int  id)
+        {
+
+            var urun = repository.GetById(id);
+
+          
+
+
+            return View(urun);
+
+        }
+
+
+        public IActionResult Edit(int id)
+        {
+
+            var urun = repository.GetById(id);
+
+
+
+
+            return View(urun);
+
+        }
+
+        [HttpPost]
+        public IActionResult Edit(Product model)
+        {
+            repository.UpdateProduct(model);
+
+
+
+        
+
+            return RedirectToAction("List");
+
+        }
+
+
+        public IActionResult Delete(int  id)
+        {
+
+
+             var deger= repository.GetById(id);
+
+               repository.Delete(id);
+
+
+
+            return RedirectToAction("List");
+
+        }
+
+
+
     }
 }

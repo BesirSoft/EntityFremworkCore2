@@ -20,5 +20,27 @@ namespace EntityFremworkCore2.Models
             _context.Products.Add(product);
             _context.SaveChanges();
         }
+
+        public void Delete(int id)
+        {
+          var ururn=  _context.Products.Where(i => i.ProductId == id).FirstOrDefault();
+
+            _context.Remove(ururn);
+            _context.SaveChanges();
+
+        }
+
+        public Product GetById(int producid)
+        {
+
+            return _context.Products.Where(i => i.ProductId == producid).FirstOrDefault();
+
+        }
+
+        public void UpdateProduct(Product product)
+        {
+            _context.Products.Update(product);
+            _context.SaveChanges();
+        }
     }
 }

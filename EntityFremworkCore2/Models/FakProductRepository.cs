@@ -23,5 +23,20 @@ namespace EntityFremworkCore2.Models
         {
             throw new NotImplementedException();
         }
+
+        public void Delete(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Product GetById(int producid)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void UpdateProduct(Product product)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -8,9 +8,14 @@ namespace EntityFremworkCore2.Models
     public interface IProductRepository
     {
 
-         IQueryable<Product> Products { get; }
+
+        Product GetById(int producid);
+
+        IQueryable<Product> Products { get; }
 
         void CreateProduct(Product product);
+        void UpdateProduct(Product product);
+        void Delete(int id);
 
     }
 }
