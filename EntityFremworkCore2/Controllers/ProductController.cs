@@ -14,6 +14,7 @@ namespace EntityFremworkCore2.Controllers
 
         public ProductController(IProductRepository repo)
         {
+         
             repository = repo;
         }
 

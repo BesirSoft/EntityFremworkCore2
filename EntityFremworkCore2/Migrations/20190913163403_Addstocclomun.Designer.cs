@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EntityFremworkCore2.Migrations
 {
     [DbContext(typeof(AplicationDbContext))]
-    [Migration("20190909114224_initial")]
-    partial class initial
+    [Migration("20190913163403_Addstocclomun")]
+    partial class Addstocclomun
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -33,6 +33,8 @@ namespace EntityFremworkCore2.Migrations
                     b.Property<string>("Name");
 
                     b.Property<int>("Price");
+
+                    b.Property<int>("Stok");
 
                     b.HasKey("ProductId");
 

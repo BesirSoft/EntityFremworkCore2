@@ -14,7 +14,8 @@ namespace EntityFremworkCore2.Models
         public string Description { get; set; }
         public int Price { get; set; }
         public string Category { get; set; }
-       
+        public int Stok { get; set; }
+
 
     }
 }

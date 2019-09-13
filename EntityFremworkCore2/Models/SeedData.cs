@@ -20,19 +20,19 @@ namespace EntityFremworkCore2.Models
             context.Database.Migrate();
 
 
-            if (!context.Products.Any())
-            {
-                context.Products.AddRange(
-              new Product() { ProductId = 1, Name = "samsung1", Price = 2001, Category = "Telfon1" },
-              new Product() { ProductId = 2, Name = "samsung2", Price = 2002, Category = "Telfon2" },
-              new Product() { ProductId = 3, Name = "samsung3", Price = 2003, Category = "Telfon3" },
-              new Product() { ProductId = 4, Name = "samsung4", Price = 2004, Category = "Telfon4" },
-              new Product() { ProductId = 5, Name = "samsung5", Price = 2005, Category = "Telfon5" }
+            //if (!context.Products.Any())
+            //{
+            //    context.Products.AddRange(
+            //  new Product() { ProductId = 1, Name = "samsung1", Price = 2001, Category = "Telfon1" },
+            //  new Product() { ProductId = 2, Name = "samsung2", Price = 2002, Category = "Telfon2" },
+            //  new Product() { ProductId = 3, Name = "samsung3", Price = 2003, Category = "Telfon3" },
+            //  new Product() { ProductId = 4, Name = "samsung4", Price = 2004, Category = "Telfon4" },
+            //  new Product() { ProductId = 5, Name = "samsung5", Price = 2005, Category = "Telfon5" }
 
-                    );
+            //        );
 
-                context.SaveChanges();
-            }
+            //    context.SaveChanges();
+            //}
 
 
         }
