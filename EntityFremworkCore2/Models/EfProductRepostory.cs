@@ -14,5 +14,11 @@ namespace EntityFremworkCore2.Models
         }
 
         public IQueryable<Product> Products => _context.Products;
+
+        public void CreateProduct(Product product)
+        {
+            _context.Products.Add(product);
+            _context.SaveChanges();
+        }
     }
 }

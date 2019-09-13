@@ -10,5 +10,7 @@ namespace EntityFremworkCore2.Models
 
          IQueryable<Product> Products { get; }
 
+        void CreateProduct(Product product);
+
     }
 }

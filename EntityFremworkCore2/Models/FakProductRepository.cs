@@ -18,5 +18,10 @@ namespace EntityFremworkCore2.Models
 
 
         }.AsQueryable();
+
+        public void CreateProduct(Product product)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

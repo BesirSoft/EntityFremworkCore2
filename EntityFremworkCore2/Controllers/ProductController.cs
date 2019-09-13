@@ -25,7 +25,43 @@ namespace EntityFremworkCore2.Controllers
 
 
 
-        public IActionResult List() => View(repository.Products);
+        public IActionResult List() {
 
+
+
+            var urun=repository.Products.Where(i => i.Price == 10000000);
+
+            return View(urun);
+
+        }
+
+
+
+
+
+        [HttpGet]
+        public IActionResult Create( )
+        {
+
+
+
+            
+
+            return View();
+
+        }
+
+
+        public IActionResult Create(Product product)
+        {
+
+
+
+            repository.CreateProduct(product);
+            
+
+            return View();
+
+        }
     }
 }
